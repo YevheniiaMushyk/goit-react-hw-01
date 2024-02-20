@@ -1,11 +1,17 @@
-import { FriendListItem } from "./FriendListItem";
-export const FriendList = () => {
+import FriendListItem from "./FriendListItem";
+import friends from "../friends.json";
+const FriendList = () => {
 	return (
 		<ul>
-			{/* Кількість li залежить від кількості об'єктів в масиві */}
-			<li>
-				<FriendListItem />
-			</li>
+			{friends.map((item) => {
+				return (
+					<li key={item.id}>
+						<FriendListItem avatar={item.avatar} name={item.name} isOnline={item.isOnline} />
+					</li>
+				);
+			})}
 		</ul>
 	);
 };
+
+export default FriendList;

@@ -6,7 +6,7 @@ const FriendList = () => {
 			{friends.map((item) => {
 				return (
 					<li key={item.id}>
-						<FriendListItem avatar={item.avatar} name={item.name} isOnline={item.isOnline} />
+						<FriendListItem avatar={item.avatar} name={item.name} isOnline={item.isOnline ? "Online" : "Offline"} />
 					</li>
 				);
 			})}
